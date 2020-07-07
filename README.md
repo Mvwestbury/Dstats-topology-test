@@ -1,10 +1,10 @@
 # Dstats-topology-test
 Basic scripts for filtering and plotting ABBA/BABA or D-statistics outputs to test for population structure
 
-# Background
+## Background
 D-statistics is most commonly used to find evidence of gene flow, represented by a high D-score, a high D-score can also be caused by more recent common ancestry brought about by an incorrect predefined topology. 
 
-# Run Dstatistics on all individual combinations using ANGSD 
+## Run Dstatistics on all individual combinations using ANGSD 
 http://www.popgen.dk/angsd/index.php/Abbababa
 
 Example command: 
@@ -12,8 +12,9 @@ Example command:
 ## Run block jackknifing using the R script available in the ANGSD toolsuite
 Rscript jackKnife.R file=output.abbababa indNames=Individual_names.txt outfile=dstats_jackknifed
 
-## Run a loop to produce commands for all "population" comparisons
-while read -r line; do while read -r line2; do echo sh Dstats_topology_test.sh $line $line2 dstats_jackknifed.txt; done < Populations.txt ; done < Populations.txt | awk '$3!=$4{print}'
+Run a loop to produce commands for all "population" comparisons
+
+`while read -r line; do while read -r line2; do echo sh Dstats_topology_test.sh $line $line2 dstats_jackknifed.txt; done < Populations.txt ; done < Populations.txt | awk '$3!=$4{print}'`
 
 # Put all relevent population comparisons together and add a header
 while read -r line; do sh Combining_outputs.sh $line ; done
