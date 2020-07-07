@@ -4,6 +4,10 @@ Basic scripts for filtering and plotting ABBA/BABA or D-statistics outputs to te
 ## Background
 D-statistics is most commonly used to find evidence of gene flow, represented by a high D-score, a high D-score can also be caused by more recent common ancestry brought about by an incorrect predefined topology. 
 
+Taking the latter into account, by placing individuals into predefined "populations" and comparing the average D values produced from “correct” topologies, that is, topologies where branches H1 and H2 contain individuals from the same "population" but H3 contains indiviuals from another "population", and “incorrect” topologies, that is, topologies in which branches H2 and H3 have individuals from the same "population" while H1 is from a different "population". 
+
+Using this same approach we can also investigate for evidence of subpopulation structure within "populations" in which all branches contain individuals from a single "population".
+
 ## How-to
 
 Run Dstatistics using ANGSD http://www.popgen.dk/angsd/index.php/Abbababa
