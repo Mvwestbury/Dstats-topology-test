@@ -1,5 +1,5 @@
 # Dstats-topology-test
-Basic scripts for filtering and plotting ABBA/BABA or D-statistics outputs to test for population structure
+Basic scripts for filtering and plotting ABBA/BABA or D-statistics outputs to test for population structure. D-statistics uses a predefined topology of (((H1,H2), H3), Outgroup) which we can leverage for population structure analyses.
 
 ## Background
 D-statistics is most commonly used to find evidence of gene flow, represented by a high D-score, a high D-score can also be caused by more recent common ancestry brought about by an incorrect predefined topology. 
@@ -32,6 +32,7 @@ Put all relevent population comparisons together and add a header
 
 Example
 
+```R
 library(RColorBrewer)
 library(ggplot2)
 library(ggpubr)
@@ -65,3 +66,4 @@ p=ggviolin(NZ,
            order = c("NewZealand_NewZealand_NewZealand","NewZealand_NewZealand_SouthAfrica","SouthAfrica_NewZealand_NewZealand","NewZealand_NewZealand_SouthAustralia","SouthAustralia_NewZealand_NewZealand","NewZealand_NewZealand_WestAustralia","WestAustralia_NewZealand_NewZealand"),
            add.params = list(alpha = .1)) + rotate_x_text(angle = 90)
 p + font("x.text", size = 9)+ geom_hline(yintercept=0,color = "black", size=0.5,linetype="dashed") + rremove("legend")`
+```
