@@ -1,2 +1,2 @@
 # Dstats-topology-test
-Basic script for filtering ABBA/BABA or D-statistics outputs to test for population structure
+Basic scripts for filtering and plotting ABBA/BABA or D-statistics outputs to test for population structure
