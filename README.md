@@ -15,21 +15,21 @@ Run Dstatistics using ANGSD http://www.popgen.dk/angsd/index.php/Abbababa
 Example command: 
 
 
-Run block jackknifing using the R script available in the ANGSD toolsuite
+ - Run block jackknifing using the R script available in the ANGSD toolsuite
 
 `Rscript jackKnife.R file=output.abbababa indNames=Individual_names.txt outfile=dstats_jackknifed`
 
-Run a loop to produce commands for all "population" comparisons
+ - Run a loop to produce commands for all "population" comparisons
 
 `while read -r line; do while read -r line2; do echo sh Dstats_topology_test.sh $line $line2 dstats_jackknifed.txt; done < Populations.txt ; done < Populations.txt | awk '$3!=$4{print}'`
 
-Put all relevent population comparisons together and add a header
+ - Put all relevent population comparisons together and add a header
 
 `while read -r line; do sh Combining_outputs.sh $line ; done < Populations.txt`
 
 This will give the output Pop_vs_rest.txt 
 
-To evaluate the significance of these results we can look for a non-parametric value of |Z|>3 using a one sample Wilcoxon signed rank test
+ - To evaluate the significance of these results we can look for a non-parametric value of |Z|>3 using a one sample Wilcoxon signed rank test
 http://www.sthda.com/english/wiki/one-sample-wilcoxon-signed-rank-test-in-r
 
 ```R
