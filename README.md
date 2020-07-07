@@ -9,8 +9,9 @@ http://www.popgen.dk/angsd/index.php/Abbababa
 
 Example command: 
 
-## Run block jackknifing using the R script available in the ANGSD toolsuite
-Rscript jackKnife.R file=output.abbababa indNames=Individual_names.txt outfile=dstats_jackknifed
+Run block jackknifing using the R script available in the ANGSD toolsuite
+
+´Rscript jackKnife.R file=output.abbababa indNames=Individual_names.txt outfile=dstats_jackknifed´
 
 Run a loop to produce commands for all "population" comparisons
 
