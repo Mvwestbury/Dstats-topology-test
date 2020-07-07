@@ -25,8 +25,20 @@ Run a loop to produce commands for all "population" comparisons
 
 Put all relevent population comparisons together and add a header
 
-`while read -r line; do sh Combining_outputs.sh $line ; done`
+`while read -r line; do sh Combining_outputs.sh $line ; done < Populations.txt`
 
+This will give the output Pop_vs_rest.txt 
+
+To evaluate the significance of these results we can look for a non-parametric value of |Z|>3 using a one sample Wilcoxon signed rank test
+http://www.sthda.com/english/wiki/one-sample-wilcoxon-signed-rank-test-in-r
+
+```R
+a=read.table("Pop_vs_rest.txt",header=TRUE)
+# If the mean Z looks greater than 3
+wilcox.test(a$V4,mu=3,conf.int=TRUE,alternative=c("greater"),conf.level=0.95)
+# If it looks lower than -3
+wilcox.test(a$V4,mu=-3,conf.int=TRUE,alternative=c("less"),conf.level=0.95)
+```
 
 ## Plot the results using R
 
@@ -38,6 +50,7 @@ library(ggplot2)
 library(ggpubr)
 my.palette <- brewer.pal(3, "Set2")
 
+NZ=read.table("Pop_vs_rest.txt",header=TRUE)
 # Plot the Z scores
 p=ggviolin(NZ,
            x = "Topology",
