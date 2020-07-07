@@ -33,7 +33,8 @@ library(ggplot2)
 library(ggpubr)
 my.palette <- brewer.pal(3, "Set2")
 
-'# Plot the Z scores'
+# Plot the Z scores
+
 p=ggviolin(NZ,
            x = "Topology",
            y = "Z",
