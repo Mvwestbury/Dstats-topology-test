@@ -4,10 +4,12 @@ Basic scripts for filtering and plotting ABBA/BABA or D-statistics outputs to te
 ## Background
 D-statistics is most commonly used to find evidence of gene flow, represented by a high D-score, a high D-score can also be caused by more recent common ancestry brought about by an incorrect predefined topology. 
 
-## Run Dstatistics on all individual combinations using ANGSD 
-http://www.popgen.dk/angsd/index.php/Abbababa
+## How-to
+
+Run Dstatistics using ANGSD http://www.popgen.dk/angsd/index.php/Abbababa
 
 Example command: 
+
 
 Run block jackknifing using the R script available in the ANGSD toolsuite
 
@@ -31,7 +33,7 @@ library(ggplot2)
 library(ggpubr)
 my.palette <- brewer.pal(3, "Set2")
 
-"# Plot the Z scores"
+'# Plot the Z scores'
 p=ggviolin(NZ,
            x = "Topology",
            y = "Z",
