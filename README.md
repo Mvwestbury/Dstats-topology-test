@@ -11,20 +11,21 @@ Example command:
 
 Run block jackknifing using the R script available in the ANGSD toolsuite
 
-´Rscript jackKnife.R file=output.abbababa indNames=Individual_names.txt outfile=dstats_jackknifed´
+`Rscript jackKnife.R file=output.abbababa indNames=Individual_names.txt outfile=dstats_jackknifed`
 
 Run a loop to produce commands for all "population" comparisons
 
 `while read -r line; do while read -r line2; do echo sh Dstats_topology_test.sh $line $line2 dstats_jackknifed.txt; done < Populations.txt ; done < Populations.txt | awk '$3!=$4{print}'`
 
-# Put all relevent population comparisons together and add a header
-while read -r line; do sh Combining_outputs.sh $line ; done
+Put all relevent population comparisons together and add a header
+
+`while read -r line; do sh Combining_outputs.sh $line ; done`
 
 
 # Plot the results using R
 ## Example
 
-library(RColorBrewer)
+`library(RColorBrewer)
 library(ggplot2)
 library(ggpubr)
 my.palette <- brewer.pal(3, "Set2")
@@ -55,4 +56,4 @@ p=ggviolin(NZ,
            ylim = c(-0.06,0.06),
            order = c("NewZealand_NewZealand_NewZealand","NewZealand_NewZealand_SouthAfrica","SouthAfrica_NewZealand_NewZealand","NewZealand_NewZealand_SouthAustralia","SouthAustralia_NewZealand_NewZealand","NewZealand_NewZealand_WestAustralia","WestAustralia_NewZealand_NewZealand"),
            add.params = list(alpha = .1)) + rotate_x_text(angle = 90)
-p + font("x.text", size = 9)+ geom_hline(yintercept=0,color = "black", size=0.5,linetype="dashed") + rremove("legend")
+p + font("x.text", size = 9)+ geom_hline(yintercept=0,color = "black", size=0.5,linetype="dashed") + rremove("legend")`
