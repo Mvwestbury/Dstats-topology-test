@@ -22,15 +22,16 @@ Put all relevent population comparisons together and add a header
 `while read -r line; do sh Combining_outputs.sh $line ; done`
 
 
-# Plot the results using R
-## Example
+## Plot the results using R
 
-`library(RColorBrewer)
+Example
+
+library(RColorBrewer)
 library(ggplot2)
 library(ggpubr)
 my.palette <- brewer.pal(3, "Set2")
 
-## Plot the Z scores
+"# Plot the Z scores"
 p=ggviolin(NZ,
            x = "Topology",
            y = "Z",
