@@ -10,12 +10,12 @@ Using this same approach we can also investigate for evidence of subpopulation s
 
 ## How-to
 
-Run Dstatistics using ANGSD http://www.popgen.dk/angsd/index.php/Abbababa
+First run Dstatistics using ANGSD http://www.popgen.dk/angsd/index.php/Abbababa
 
 Example command: 
 
 
- - Run block jackknifing using the R script available in the ANGSD toolsuite
+ - Run block jackknifing on the abbababa output from ANGSD using the R script available in the ANGSD toolsuite
 
 `Rscript jackKnife.R file=output.abbababa indNames=Individual_names.txt outfile=dstats_jackknifed`
 
