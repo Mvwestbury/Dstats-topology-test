@@ -21,7 +21,7 @@ Example command:
 
  - Run a loop to produce commands for all "population" comparisons
 
-`while read -r line; do while read -r line2; do echo sh Dstats_topology_test.sh $line $line2 dstats_jackknifed.txt; done < Populations.txt ; done < Populations.txt | awk '$3!=$4{print}'`
+`while read -r line; do while read -r line2; do echo sh Dstats-topology-test.sh $line $line2 dstats_jackknifed.txt; done < Populations.txt ; done < Populations.txt | awk '$3!=$4{print}'`
 
  - Put all relevent population comparisons together and add a header
 
