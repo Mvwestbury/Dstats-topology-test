@@ -1,7 +1,7 @@
 # Dstats-topology-test
 Basic scripts for filtering and plotting ABBA/BABA or D-statistics outputs to test for population structure. D-statistics uses a predefined topology of (((H1,H2), H3), Outgroup) which we can leverage for population structure analyses.
 
-If you use it please cite https://doi.org/10.1098/rsos.201788
+If you use it please cite our paper https://doi.org/10.1098/rsos.201788
 
 ## Background
 D-statistics is most commonly used to find evidence of gene flow, represented by a high D-score, a high D-score can also be caused by more recent common ancestry brought about by an incorrect predefined topology. 
